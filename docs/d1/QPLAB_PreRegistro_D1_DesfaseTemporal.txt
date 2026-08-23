@@ -1,0 +1,28 @@
+QPLAB — PRE-REGISTRO D1
+Protocolo de Selección de Operacionalización del Desfase Temporal
+QPLAB V2.5C | X-LAB Research | 28 junio 2026
+Estado: CONGELADO
+
+Propósito:
+D1 no es una exploración. Es un protocolo de selección de modelo. Evalúa la semántica del desfase:
+“información del estado de mercado reciente capturada por SI que P todavía no ha incorporado”.
+
+Candidata E:
+tau_half = ln(0.5) / ln(P_DECAY)
+
+Valores:
+BTC: P_DECAY 0.920 -> 8.3 barras M1
+ETH: P_DECAY 0.950 -> 13.5 barras M1
+XAU: P_DECAY 0.990 -> 69.0 barras M1
+
+Propiedades requeridas:
+1. Cero en equilibrio.
+2. Sensible al desfase.
+3. Independiente de escala.
+4. Covariación con P_DECAY.
+5. Sin circularidad: construida exclusivamente con SI y P.
+
+Restricciones:
+R1-R4: candidatas, fórmulas, filtros y tau_half congelados.
+R5: núcleo matemático MQL5 LOCKED.
+R6: D2 no forma parte de D1.

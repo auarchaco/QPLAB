@@ -1,0 +1,20 @@
+ARQUITECTURA CELULAR ESTRUCTURAL — REFERENCIA
+
+La arquitectura trata el mercado como un organismo dinámico.
+El estado presente depende del pasado y evoluciona incrementalmente bajo forcing.
+
+Propiedades estructurales:
+- memoria estructural;
+- relajación;
+- conservación de estado;
+- respuesta dependiente de historia;
+- metabolismo observable;
+- histéresis;
+- desacople flujo/desplazamiento;
+- reorganización longitudinal.
+
+La arquitectura matemática y sus parámetros de V2.5C están LOCKED.
+La historia fisiológica se conserva mediante buffers temporales y la evolución no debe resetear artificialmente el organismo.
+
+Capas conceptuales:
+Sensorial -> Contextual -> Energética -> Fisiológica -> Derivadas.

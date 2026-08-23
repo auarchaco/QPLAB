@@ -1,0 +1,33 @@
+QPLAB — DOCUMENTO MAESTRO DE CONTEXTO
+Glosario Estructural y Fisiodinámico — 17 junio 2026
+
+Definición:
+QPLAB es un laboratorio microfisiológico longitudinal que modela mercados financieros como organismos dinámicos bajo forcing contextual continuo.
+No es un indicador técnico clásico ni un sistema de señales. No predice precio.
+
+Objetivo:
+Medir cómo un organismo financiero acumula, conserva y reorganiza estructura bajo presión contextual continua.
+
+Separación de capas:
+QPLAB = capa MICRO.
+CORE = capa MACRO y permanece separado.
+
+Núcleo:
+S_(t+1) = evolve(S_t, M_t)
+S_t = vector de estado fisiológico.
+M_t = perturbación de mercado.
+evolve() = determinista, incremental y con irreversibilidad parcial.
+
+Principios:
+- Falsación sobre iteración.
+- Pre-registro estricto.
+- BUGS != HALLAZGOS.
+- Principio SEP: frecuencia de ciclos pertenece al ambiente; amplitud al organismo.
+- Resolución secuencial.
+- Solo datos modifican parámetros, hipótesis y protocolos.
+
+Organismo:
+Sistema dinámico con memoria, relajación, conservación estructural y respuesta dependiente de historia.
+
+Definición consolidada:
+QPLAB es un laboratorio de medición de conservación estructural en sistemas dinámicos bajo presión contextual, con el mercado financiero como primer organismo experimental.

@@ -1,0 +1,52 @@
+QPLAB — D1
+BLOQUE LÓGICO CONSOLIDADO
+Fecha de consolidación: 23 de agosto de 2026
+Proveniencia: reconstrucción textual consolidada a partir de documentación previa del programa (pre-registro D1, Fase 0, Fase 1). Formateado desde el archivo subido por el usuario el 23-08-2026, sin modificación de contenido.
+
+1. Posición
+H2-R2: P_DECAY modula el residual de mediación SI/VS mediante diferencia de escalas temporales.
+D1 es la operacionalización experimental de esta hipótesis.
+D1 no es exploratorio: es un protocolo congelado de selección/falsación de operacionalización.
+
+2. Cadena Lógica
+H2-R2
+  -> D1: desfase temporal
+  -> cinco candidatas A-E
+  -> triple filtro
+  -> decisión binaria bajo protocolo
+
+3. Desfase Temporal (τ½)
+tau_half = ln(0.5) / ln(P_DECAY)
+
+4. Propiedades Requeridas de la Operacionalización
+Cero en equilibrio
+Sensible al desfase
+Independiente de escala
+Covariación con P_DECAY
+Sin circularidad: construido exclusivamente con SI y P
+
+5. Candidatas
+
+6. Triple Filtro
+
+7. Regla de Decisión
+Si una candidata satisface los tres filtros, es compatible con H2-R2 bajo D1.
+Si ninguna candidata satisface los tres filtros, H2-R2 queda falsada bajo las operacionalizaciones D1.
+
+8. Fase 0
+Pipeline validado; A–E implementadas; triple filtro operativo; H2-R2 pre-registrada; núcleo MQL5 LOCKED. Observaciones O-01 a O-05 separadas del protocolo.
+
+9. Fase 1
+Dataset independiente: 21–26 julio 2026.
+Ninguna candidata superó los tres filtros. C fue la única con F1 y F3, pero delta_r = 0.070 < 0.10.
+Residuales base: BTC −0.025; ETH −0.038; XAU −0.086.
+El gradiente O1 (BTC<ETH<XAU) no se reprodujo.
+
+10. Veredicto
+D1 COMPLETADO.
+H2-R2 FALSADA BAJO D1.
+D1 no falló: cumplió su función de discriminar la hipótesis.
+La arquitectura P -> R -> RE -> VS permanece consistente en los dos datasets evaluados.
+
+11. Regla de Integridad
+No modificar retrospectivamente fórmulas, candidatas, umbrales ni criterios de decisión después de observar resultados de Fase 1.

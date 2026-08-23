@@ -1,0 +1,69 @@
+QPLAB
+ARQUITECTURA Y ONTOLOGÍA — BLOQUE CONSOLIDADO
+Fecha de consolidación: 23 de agosto de 2026
+Proveniencia: reconstrucción textual consolidada a partir del Documento Maestro / Glosario Estructural y Fisiodinámico (17 jun 2026) y de la Arquitectura Celular Estructural de referencia. Formateado desde el archivo subido por el usuario el 23-08-2026, sin modificación de contenido.
+
+Ontología
+QPLAB modela el mercado como un organismo dinámico bajo forcing contextual continuo.
+El objeto no es predecir precio ni producir señales técnicas clásicas.
+El objeto es medir cómo el organismo acumula, conserva y reorganiza estructura bajo presión contextual.
+
+Estado
+S_(t+1) = evolve(S_t, M_t)
+S_t = vector de estado fisiológico.
+M_t = perturbación de mercado.
+evolve() = determinista, incremental y con irreversibilidad parcial.
+
+Arquitectura Conceptual (capas)
+Sensorial -> Contextual -> Energética -> Fisiológica -> Derivadas
+
+Arquitectura Funcional
+P -> R -> RE -> VS
+P: componente de memoria/integración de estado.
+R: respuesta/efecto de transacción o respuesta estructural según el experimento.
+RE: componente intermedio terminal identificado en el análisis de mediación.
+VS: variable de salida/estado observada.
+SI permanece como co-observable paralelo del mismo estado, no como causa directa de VS bajo H2-R.
+
+Propiedades Estructurales
+Memoria estructural
+Relajación
+Conservación de estado
+Respuesta dependiente de historia
+Metabolismo observable
+Histéresis
+Desacople flujo/desplazamiento
+Reorganización longitudinal
+
+Principios Metodológicos
+Falsación sobre iteración
+Pre-registro estricto
+BUGS ≠ HALLAZGOS
+SEP (Separación Ambiente-Organismo): la frecuencia de ciclos pertenece al ambiente; la amplitud, al organismo
+Resolución secuencial
+Solo los datos modifican parámetros, hipótesis y protocolos
+
+Separación de Escalas
+QPLAB = capa MICRO / fisiología local y contextual.
+CORE = capa MACRO / organización longitudinal.
+La separación es arquitectónica; existe acoplamiento observacional, no dependencia operativa.
+
+Invariante Operativa
+La historia fisiológica se conserva mediante buffers temporales.
+La evolución es incremental.
+No se permite resetear artificialmente el organismo entre ciclos.
+
+Estatus
+Arquitectura matemática y parámetros V2.5C: LOCKED.
+La arquitectura P -> R -> RE -> VS fue consistente en los dos datasets utilizados en el ciclo H2-R/H2-R2.
+La universalidad fuera del dominio experimental no está establecida.
+
+Anexo A — Glosario Estructural y Fisiodinámico (Documento Maestro, 17 jun 2026)
+Definición: QPLAB es un laboratorio microfisiológico longitudinal que modela mercados financieros como organismos dinámicos bajo forcing contextual continuo. No es un indicador técnico clásico ni un sistema de señales. No predice precio.
+Objetivo: medir cómo un organismo financiero acumula, conserva y reorganiza estructura bajo presión contextual continua.
+Organismo: sistema dinámico con memoria, relajación, conservación estructural y respuesta dependiente de historia.
+Definición consolidada: QPLAB es un laboratorio de medición de conservación estructural en sistemas dinámicos bajo presión contextual, con el mercado financiero como primer organismo experimental.
+
+Anexo B — Arquitectura Celular Estructural (Referencia)
+La arquitectura trata el mercado como un organismo dinámico. El estado presente depende del pasado y evoluciona incrementalmente bajo forcing.
+La arquitectura matemática y sus parámetros de V2.5C están LOCKED. La historia fisiológica se conserva mediante buffers temporales y la evolución no debe resetear artificialmente el organismo.

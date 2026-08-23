@@ -1,0 +1,36 @@
+QPLAB — ESTADO DE CONTINUIDAD
+23 agosto 2026
+
+D1:
+COMPLETADO.
+H2-R2: FALSADA BAJO D1.
+No se reabre salvo nueva hipótesis/protocolo explícito.
+
+V2.5C:
+LOCKED.
+
+REGISTRO MAESTRO:
+Gobernanza activa.
+
+Q1:
+Campaña observacional activa.
+OBS-01: AMBIGUO.
+OBS-02: AMBIGUO preliminar/verificado técnicamente.
+OBS-03: pendiente.
+OBS-04: pendiente.
+
+OBS-01:
+BTC -0.1057; ETH +0.1037; XAU -0.1274.
+Clasificación AMBIGUO.
+
+OBS-02:
+BTC +0.05077; ETH -0.05754; XAU -0.13226.
+Clasificación AMBIGUO.
+Warm-up correcto y SEED excluido.
+Cobertura temporal >72 h con discontinuidades internas documentadas.
+Los logs disponibles no demuestran que dichas discontinuidades sean una caída de QPLAB.
+TPC/BSA se mantienen como contexto técnico, no como variables explicativas de Q1.
+
+REGLA:
+No formular hipótesis causal durante Q1.
+Completar OBS-03 y OBS-04 antes de clasificar el patrón global.
