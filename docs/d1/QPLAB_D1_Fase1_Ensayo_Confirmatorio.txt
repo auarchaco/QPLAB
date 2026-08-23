@@ -1,0 +1,22 @@
+QPLAB — D1 FASE 1 — ENSAYO CONFIRMATORIO
+25 julio 2026
+Dataset independiente: 2026-07-21 -> 2026-07-26
+H2-R2: CERRADA (FALSADA BAJO D1)
+
+Datos:
+BTC ~99.9 h
+ETH ~99.9 h
+XAU ~72.1 h
+Sin solapamiento con dataset de desarrollo.
+
+Resultados:
+Ninguna de las cinco candidatas D1 superó los tres filtros pre-registrados.
+Candidata C fue la única con F1 y F3, pero delta_r=0.070 < 0.10.
+Los residuales base Fase 1 fueron BTC -0.025; ETH -0.038; XAU -0.086.
+El gradiente O1 BTC<ETH<XAU no se reprodujo.
+
+Conclusión:
+D1 COMPLETADO.
+H2-R2 falsada bajo las operacionalizaciones D1.
+D1 no falló: cumplió su función de discriminar hipótesis.
+Arquitectura P->R->RE->VS permanece estable.
