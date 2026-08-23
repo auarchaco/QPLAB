@@ -1,0 +1,24 @@
+REGISTRO MAESTRO DE HIPÓTESIS — ESTADO RECUPERADO
+
+H2:
+SI antagoniza VS directamente.
+Estado: FALSADA.
+
+H2-R:
+SI y VS son co-efectos del mismo estado de mercado; mediación P->R->RE.
+Estado: PARCIALMENTE CORROBORADA.
+
+H2-R2:
+P_DECAY modula el residual de mediación SI/VS vía diferencia de escalas temporales.
+Estado: FALSADA BAJO D1.
+
+O1:
+Gradiente del residual BTC<ETH<XAU.
+Estado: CERRADA / NO REPLICADA.
+
+O-02:
+Variabilidad del residual entre periodos.
+Estado: pregunta experimental activa.
+
+D1:
+COMPLETADO.
