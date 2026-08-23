@@ -1,0 +1,17 @@
+QPLAB — D1 FASE 0 — VERIFICACIÓN TÉCNICA
+28 junio 2026
+
+Pipeline D1 VALIDADO.
+Candidatas A-E IMPLEMENTADAS.
+Triple filtro OPERATIVO.
+H2-R2 PRE-REGISTRADA.
+Motor MQL5 LOCKED.
+Observaciones O-01 a O-05 registradas, fuera del protocolo.
+
+Instrucciones Fase 1:
+I1 nueva captura independiente; mismo motor, parámetros y activos BTC/ETH/XAU.
+I2 protocolo D1 idéntico.
+I3 mismos umbrales: delta_r >= 0.10, p < 0.01, orden XAU>ETH>BTC y arquitectura preservada.
+I4 reportar todas las candidatas.
+I5 consultar observaciones solo después del triple filtro.
+I6 si ninguna candidata pasa, H2-R2 queda falsada bajo las operacionalizaciones D1.
