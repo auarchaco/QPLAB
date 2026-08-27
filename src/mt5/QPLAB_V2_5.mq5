@@ -42,22 +42,33 @@ string CSV_FILE;
 
 struct OrganismState
 {
+   // Core physiology
    double P;
    double F;
    double R;
    double Omega;
    double SI;
+
+   // Sensors
    double C_t;
    double K_t;
+
+   // Longitudinal
    double SD;
    double RDebt;
+
+   // Derived
    double RE;
    double CI;
    double MB;
    double VS_raw;
    double VS;
+
+   // Runtime
    long tick_count;
    datetime timestamp;
+
+   // Market
    double price;
    double delta;
    double sigma;
@@ -89,22 +100,36 @@ double Clamp(double value,double minv,double maxv)
 
 void ComputeSensors()
 {
+   // Current price
    double current_price = SymbolInfoDouble(_Symbol,SYMBOL_BID);
+
+   // Delta
    STATE.delta = current_price - STATE.price;
+
+   // Volatility estimate
    double sum = 0.0;
 
    for(int i=1;i<=NormWindow;i++)
    {
       double p1 = iClose(_Symbol,PERIOD_M1,i);
       double p2 = iClose(_Symbol,PERIOD_M1,i+1);
+
       sum += MathPow(p1-p2,2);
    }
 
    STATE.sigma = MathSqrt(sum/NormWindow);
 
+   //===============================================================//
+   // K_t
+   //===============================================================//
+
    STATE.K_t =
       MathAbs(STATE.delta) /
       (STATE.sigma + EPSILON);
+
+   //===============================================================//
+   // C_t
+   //===============================================================//
 
    double meanA = 0.0;
 
@@ -128,6 +153,8 @@ void ComputeSensors()
       (stdA + EPSILON);
 
    STATE.C_t = Sigmoid(z);
+
+   // Update current price
    STATE.price = current_price;
 }
 
@@ -137,9 +164,17 @@ void ComputeSensors()
 
 void Evolve()
 {
+   //===============================================================//
+   // PERSISTENCE
+   //===============================================================//
+
    STATE.P =
       (1.0 - AlphaP) * STATE.P +
       AlphaP * STATE.C_t;
+
+   //===============================================================//
+   // FATIGUE
+   //===============================================================//
 
    STATE.F =
       (1.0 - AlphaF) * STATE.F +
@@ -147,6 +182,10 @@ void Evolve()
       GammaF * STATE.R;
 
    STATE.F = MathMax(0.0,STATE.F);
+
+   //===============================================================//
+   // RECOVERY
+   //===============================================================//
 
    STATE.R =
       (1.0 - AlphaR) * STATE.R +
@@ -163,6 +202,10 @@ void Evolve()
 
    STATE.R = MathMax(0.0,STATE.R);
 
+   //===============================================================//
+   // OMEGA
+   //===============================================================//
+
    STATE.Omega =
       (1.0 - AlphaOmega) * STATE.Omega +
       AlphaOmega *
@@ -171,11 +214,20 @@ void Evolve()
          STATE.SI
       );
 
+   //===============================================================//
+   // SI
+   //===============================================================//
+
    STATE.SI =
       (1.0 - AlphaSI) * STATE.SI +
       AlphaSI * MathAbs(STATE.delta);
 
+   //===============================================================//
+   // STRUCTURAL DRIFT
+   //===============================================================//
+
    int n = NormWindow / 5;
+
    double P_old = iClose(_Symbol,PERIOD_M1,n);
 
    STATE.SD =
@@ -183,6 +235,10 @@ void Evolve()
       EtaSD * MathAbs(STATE.P - P_old);
 
    STATE.SD = MathMax(0.0,STATE.SD);
+
+   //===============================================================//
+   // REGENERATIVE DEBT
+   //===============================================================//
 
    STATE.RDebt =
       STATE.RDebt +
@@ -192,9 +248,17 @@ void Evolve()
 
    STATE.RDebt = MathMax(0.0,STATE.RDebt);
 
+   //===============================================================//
+   // RECOVERY EFFICIENCY
+   //===============================================================//
+
    STATE.RE =
       STATE.R /
       (STATE.F + EPSILON);
+
+   //===============================================================//
+   // CYCLE INTEGRITY
+   //===============================================================//
 
    STATE.CI =
       STATE.R /
@@ -204,6 +268,10 @@ void Evolve()
          STATE.SI +
          EPSILON
       );
+
+   //===============================================================//
+   // METABOLIC BALANCE
+   //===============================================================//
 
    double RF =
       STATE.R +
@@ -219,6 +287,10 @@ void Evolve()
 
    STATE.MB = RF - EP;
 
+   //===============================================================//
+   // VIABILITY SCORE
+   //===============================================================//
+
    STATE.VS_raw =
       W1 * STATE.RE +
       W2 * STATE.CI +
@@ -231,6 +303,10 @@ void Evolve()
 
    STATE.VS =
       Sigmoid(STATE.VS_raw);
+
+   //===============================================================//
+   // TICK COUNTER
+   //===============================================================//
 
    STATE.tick_count++;
    STATE.timestamp = TimeCurrent();
@@ -300,18 +376,23 @@ void ExportCSV()
       TimeToString(STATE.timestamp,TIME_DATE|TIME_SECONDS),
       _Symbol,
       DoubleToString(STATE.price,_Digits),
+
       DoubleToString(STATE.P,6),
       DoubleToString(STATE.F,6),
       DoubleToString(STATE.R,6),
       DoubleToString(STATE.Omega,6),
       DoubleToString(STATE.SI,6),
+
       DoubleToString(STATE.C_t,6),
       DoubleToString(STATE.K_t,6),
+
       DoubleToString(STATE.SD,6),
       DoubleToString(STATE.RDebt,6),
+
       DoubleToString(STATE.RE,6),
       DoubleToString(STATE.CI,6),
       DoubleToString(STATE.MB,6),
+
       DoubleToString(STATE.VS_raw,6),
       DoubleToString(STATE.VS,6)
    );
@@ -370,7 +451,10 @@ int OnInit()
 void OnTick()
 {
    ComputeSensors();
+
    Evolve();
+
    ExportCSV();
+
    UpdateHUB();
 }
